@@ -1,0 +1,35 @@
+---
+title: "Alumni"
+icon: "icons/alumni.png"
+description: ""
+keywords: []
+url:
+  legacy: "/community/alumni/"
+layout: "fullwidth"
+banner: "banners/4_header_thin.jpg"
+---
+
+# <%= current_page.data.title %>
+
+## What happens to DSKI kids after graduation?
+
+We are very proud of our DSKI Alumni. While the students are at DSKI we love watching them grow academically, socially and emotionally. When the students leave we are confident we have provided them with an excellent education which will help them excel and to continue achieving in life. We are very happy to say that 90% of students are accepted to their 1st choice Kansai secondary school which we think is amazing.
+
+## Meet some of our Alumni
+
+<% data.alumni.students.each do |item| %>
+<div class="row mt-4">
+  <div class="col-md-3">
+    <%= image_tag item.image, alt: item.name[I18n.locale.to_s], class: 'img-fluid d-block w-100' %>
+  </div>
+
+  <div class="col-md-9">
+    <h3><%= item.name[I18n.locale.to_s] %></h3>
+    <p><strong>Age: </strong><%= item.age %> years old</p>
+    <p><strong>Current school: </strong><%= item.school[I18n.locale.to_s] %></p>
+    <p><strong>Extracurricular Activities: </strong><%= item.activities[I18n.locale.to_s] %></p>
+    <p><strong>Future Dream: </strong><%= item.dream[I18n.locale.to_s] %></p>
+    <p><strong>What would you like to tell people about DSKI?</strong><br><%= item.message[I18n.locale.to_s] %></p>
+  </div>
+</div>
+<% end %>

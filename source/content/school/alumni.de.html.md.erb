@@ -1,0 +1,35 @@
+---
+title: "Ehemalige Schüler"
+icon: "icons/alumni.png"
+description: ""
+keywords: []
+url:
+  legacy: "/community-de/alumni-de/?lang=de"
+layout: "fullwidth"
+banner: "banners/4_header_thin.jpg"
+---
+
+# <%= current_page.data.title %>
+
+## Was passiert mit DSKI Kindern nachdem Sie die Schule verlassen?
+
+Wir sind sehr stolz auf unsere ehemaligen Schüler. Während der Zeit, die die Schüler an der DSKI sind, lieben wir es zu beobachten, wie sie intellektuell, sozial und emotional heranwachsen. Wenn sie dann die Schule verlassen sind wir uns sicher, dass wir ihnen eine sehr gute Bildung mitgegeben haben, welche ihnen im Leben hilft herauszustechen und Ziele zu erreichen. Wir sind sehr stolz darauf zu sagen, dass 90% aller Schüler bei den weiterführenden Schulen ihrer Wahl angenommen werden - wir denken, das ist wunderbar.
+
+## nsere Ehemaligen stellen sich vor
+
+<% data.alumni.students.each do |item| %>
+  <div class="row mt-4">
+    <div class="col-md-3">
+      <%= image_tag item.image, alt: item.name[I18n.locale.to_s], class: 'img-fluid d-block w-100' %>
+    </div>
+
+    <div class="col-md-9">
+      <h3><%= item.name[I18n.locale.to_s] %></h3>
+      <p><strong>Alter: </strong><%= item.age %> Jahre alt</p>
+      <p><strong>Derzeitige Schule: </strong><%= item.school[I18n.locale.to_s] %></p>
+      <p><strong>Außerschulische Aktivitäten: </strong><%= item.activities[I18n.locale.to_s] %></p>
+      <p><strong>Zukunftspläne: </strong><%= item.dream[I18n.locale.to_s] %></p>
+      <p><strong>Was würdest du gerne den Leuten über die DSKI erzählen?</strong><br><%= item.message[I18n.locale.to_s] %></p>
+    </div>
+  </div>
+<% end %>
