@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - master
-      - move-to-previous
+      #- move-to-previous
 
 jobs:
   build:
